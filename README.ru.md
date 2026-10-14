@@ -19,20 +19,20 @@ Upstream собирает только `linux-amd64` и `windows-amd64` — сб
 Запуск без установки:
 
 ```sh
-nix run github:smykoff/yamusic-tui
+nix run github:smykoff/yamusic-tui.nix
 ```
 
 Установка в профиль пользователя:
 
 ```sh
-nix profile install github:smykoff/yamusic-tui
+nix profile install github:smykoff/yamusic-tui.nix
 ```
 
 ### NixOS (flakes)
 
 ```nix
 {
-  inputs.yamusic-tui.url = "github:smykoff/yamusic-tui";
+  inputs.yamusic-tui.url = "github:smykoff/yamusic-tui.nix";
 
   outputs = { nixpkgs, yamusic-tui, ... }: {
     nixosConfigurations.host = nixpkgs.lib.nixosSystem {

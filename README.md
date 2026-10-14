@@ -19,20 +19,20 @@ Upstream only publishes `linux-amd64` and `windows-amd64` builds — there is no
 Run without installing:
 
 ```sh
-nix run github:smykoff/yamusic-tui
+nix run github:smykoff/yamusic-tui.nix
 ```
 
 Install into the user profile:
 
 ```sh
-nix profile install github:smykoff/yamusic-tui
+nix profile install github:smykoff/yamusic-tui.nix
 ```
 
 ### NixOS (flakes)
 
 ```nix
 {
-  inputs.yamusic-tui.url = "github:smykoff/yamusic-tui";
+  inputs.yamusic-tui.url = "github:smykoff/yamusic-tui.nix";
 
   outputs = { nixpkgs, yamusic-tui, ... }: {
     nixosConfigurations.host = nixpkgs.lib.nixosSystem {
